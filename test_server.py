@@ -113,6 +113,12 @@ class Tests(unittest.TestCase):
             headers = {"Content-Type": "application/json", "Origin": "https://group19.example"}
             self.assertEqual(self.request("/api/start", {}, headers)[0], 200)
 
+    def test_railway_public_origin(self):
+        with patch.dict(server.os.environ, {"RAILWAY_PUBLIC_DOMAIN":"group19.up.railway.app"}, clear=True):
+            self.assertEqual(server.public_origin(), "https://group19.up.railway.app")
+            with patch.dict(server.os.environ, {"PUBLIC_ORIGIN":"https://classroom.example/"}):
+                self.assertEqual(server.public_origin(), "https://classroom.example")
+
     def test_free_model_guard(self):
         with patch.object(server,"KEY","TEST-PLACEHOLDER-NOT-A-CREDENTIAL"),patch.object(server,"MODEL","not-free"),patch.object(server,"FREE_ONLY",True):
             with self.assertRaisesRegex(ValueError,"Free-only"):

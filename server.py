@@ -21,7 +21,13 @@ MODEL = os.getenv("OPENROUTER_MODEL", os.getenv("OPENAI_MODEL", "openrouter/free
 FREE_ONLY = os.getenv("FREE_ONLY", "true").lower() != "false"
 PORT = int(os.getenv("PORT", "8765"))
 HOST = os.getenv("HOST", "127.0.0.1")
-PUBLIC_ORIGIN = (os.getenv("PUBLIC_ORIGIN") or os.getenv("RENDER_EXTERNAL_URL", "")).rstrip("/")
+def public_origin():
+    railway_domain = os.getenv("RAILWAY_PUBLIC_DOMAIN", "")
+    return (os.getenv("PUBLIC_ORIGIN") or os.getenv("RENDER_EXTERNAL_URL")
+            or (f"https://{railway_domain}" if railway_domain else "")).rstrip("/")
+
+
+PUBLIC_ORIGIN = public_origin()
 SESSIONS = {}
 LOCK = threading.Lock()
 REQUEST_TIMES = []

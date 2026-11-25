@@ -1,0 +1,10 @@
+**
+!Dockerfile
+!server.py
+!clues.py
+!web/
+!web/index.html
+!web/app.js
+!web/cinema.js
+!web/style.css
+!web/cinema.css
