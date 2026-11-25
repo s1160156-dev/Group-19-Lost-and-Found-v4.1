@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Lost and Found Group 19 | The Bottle Case English Game</title>
+  <meta name="description" content="Play Group 19’s Lost and Found English classroom game. Ask Mia for clues, confirm the details, and return the right water bottle in a free scripted rehearsal.">
+  <meta name="theme-color" content="#172734">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="cinema.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="wordmark" href="#">lost and found<span>(group 19)</span><span class="wordmark-sub">THE CONVERSATION CLUB</span></a>
+    <nav aria-label="Activity stages"><span id="nav0" class="active">01 <b>The counter</b></span><span id="nav1">02 <b>Observer studio</b></span><span id="nav2">03 <b>Case journal</b></span></nav>
+    <button class="quiet" id="helpBtn">Teacher notes</button>
+  </header>
+  <main id="app"></main>
+  <footer><span>Ask with curiosity. Confirm with care.</span><span id="footerMode">Classroom prototype · v4.1</span></footer>
+  <dialog id="helpDialog"><div class="dialog-top"><h2>Behind the activity</h2><button class="quiet" id="closeHelp">Close</button></div>
+    <p>This is a language-learning role play, not an automatic language assessment.</p>
+    <ol><li><strong>Questioner:</strong> ask about the bottle body, cap and sticker shape separately. Then read all three clues back and wait for Mia to confirm before choosing.</li><li><strong>Observer:</strong> listen first. After item selection, collect exact quotations and record what you observed.</li><li><strong>Teacher:</strong> compare evidence with the dialogue. The unlock checks task completion, not language proficiency. AI feedback needs your review.</li></ol>
+    <p><strong>Live AI:</strong> uses the local Python server and your OpenRouter configuration. Messages are sent to the provider. Never enter children's personal data.</p>
+    <p><strong>Rehearsal:</strong> clearly labelled, scripted responses for presentation practice. Not generative AI and not learning-outcome evidence.</p>
+    <p>Expressions are interface animations based on interaction state, not emotion recognition. Read-aloud is optional browser text-to-speech, not speech recognition.</p>
+    <p>Records stay in memory until exported. Refreshing or closing the page loses them. Export before starting a new case. Only anonymous pair codes should be used.</p>
+  </dialog>
+  <dialog id="handoffDialog" class="handoff-dialog" aria-labelledby="handoffTitle"></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="cinema.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

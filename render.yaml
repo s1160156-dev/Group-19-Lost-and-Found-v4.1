@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: group19-lost-found-ai
+    runtime: python
+    plan: free
+    buildCommand: python -m unittest -q
+    startCommand: python server.py
+    healthCheckPath: /api/status
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: OPENROUTER_MODEL
+        value: openrouter/free
+      - key: FREE_ONLY
+        value: "true"
